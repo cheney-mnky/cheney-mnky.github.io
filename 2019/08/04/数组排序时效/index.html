@@ -5,19 +5,20 @@
   
 
   
-  <title>Hello World | 学习笔记</title>
+  <title>数组排序时效研究 | 学习笔记</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Quick StartCreate a new post1$ hexo new &quot;My New Post&quot;  More info: Writing Run server1$ hexo server  More info: Server Generate static files1$ hexo generate  More info: Generating Deploy to remote site">
+  <meta name="description" content="1，for…of + Object属性2，es6, new Set()3, Array.sort()首先使用 sort() 将数组进行排序然后比较相邻元素是否相等，从而排除重复项4， filter + indexOf 挺类似只是把 filter() 的内部逻辑用 for 循环实现出来，再把 indexOf 换为 includes 第四种方法 时效稍差，5，其他方法更差">
+<meta name="keywords" content="JS好方法">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2019/08/04/hello-world/index.html">
+<meta property="og:title" content="数组排序时效研究">
+<meta property="og:url" content="http://yoursite.com/2019/08/04/数组排序时效/index.html">
 <meta property="og:site_name" content="学习笔记">
-<meta property="og:description" content="Quick StartCreate a new post1$ hexo new &quot;My New Post&quot;  More info: Writing Run server1$ hexo server  More info: Server Generate static files1$ hexo generate  More info: Generating Deploy to remote site">
+<meta property="og:description" content="1，for…of + Object属性2，es6, new Set()3, Array.sort()首先使用 sort() 将数组进行排序然后比较相邻元素是否相等，从而排除重复项4， filter + indexOf 挺类似只是把 filter() 的内部逻辑用 for 循环实现出来，再把 indexOf 换为 includes 第四种方法 时效稍差，5，其他方法更差">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-04T09:55:45.190Z">
+<meta property="og:updated_time" content="2019-08-04T11:11:59.347Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Quick StartCreate a new post1$ hexo new &quot;My New Post&quot;  More info: Writing Run server1$ hexo server  More info: Server Generate static files1$ hexo generate  More info: Generating Deploy to remote site">
+<meta name="twitter:title" content="数组排序时效研究">
+<meta name="twitter:description" content="1，for…of + Object属性2，es6, new Set()3, Array.sort()首先使用 sort() 将数组进行排序然后比较相邻元素是否相等，从而排除重复项4， filter + indexOf 挺类似只是把 filter() 的内部逻辑用 for 循环实现出来，再把 indexOf 换为 includes 第四种方法 时效稍差，5，其他方法更差">
   
     <link rel="alternate" href="/atom.xml" title="学习笔记" type="application/atom+xml">
   
@@ -60,10 +61,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-数组排序时效" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/08/04/hello-world/" class="article-date">
-  <time datetime="2019-08-04T07:12:31.726Z" itemprop="datePublished">2019-08-04</time>
+    <a href="/2019/08/04/数组排序时效/" class="article-date">
+  <time datetime="2019-08-04T09:34:36.000Z" itemprop="datePublished">2019-08-04</time>
 </a>
     
   </div>
@@ -74,7 +75,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Hello World
+      数组排序时效研究
     </h1>
   
 
@@ -82,40 +83,37 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <p>1，for…of + Object属性<br>2，es6, new Set()<br>3, Array.sort()<br>首先使用 sort() 将数组进行排序<br>然后比较相邻元素是否相等，从而排除重复项<br>4， filter + indexOf 挺类似<br>只是把 filter() 的内部逻辑用 for 循环实现出来，再把 indexOf 换为 includes</p>
+<p>第四种方法 时效稍差，<br>5，其他方法更差</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/04/hello-world/" data-id="cjywua3hw0000gcv7l860a2hk" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/04/数组排序时效/" data-id="cjywumdk80000dsv7abu532l4" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JS好方法/">JS好方法</a></li></ul>
+
     </footer>
   </div>
   
     
 <nav id="article-nav">
   
-    <a href="/2019/08/04/assets和statics目录的区别/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/08/04/判断2个对象是否相等/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          assets和statics目录的区别
+          判断2个对象是否相等
         
       </div>
     </a>
   
+  
+    <a href="/2019/08/04/对象继承最好的方法/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">对象继承最好的2个方法</div>
+    </a>
   
 </nav>
 

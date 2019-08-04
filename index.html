@@ -42,10 +42,6 @@
       <nav id="main-nav">
         <a id="main-nav-toggle" class="nav-icon"></a>
         
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
       </nav>
       <nav id="sub-nav">
         
@@ -61,6 +57,241 @@
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-判断2个对象是否相等" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/08/04/判断2个对象是否相等/" class="article-date">
+  <time datetime="2019-08-04T10:43:59.000Z" itemprop="datePublished">2019-08-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/04/判断2个对象是否相等/">判断2个对象是否相等</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">function diff(obj1,obj2)&#123;</span><br><span class="line">  var o1 = obj1 instanceof Object;</span><br><span class="line">  var o2 = obj2 instanceof Object;</span><br><span class="line">  if(!o1 || !o2)&#123;/*  判断不是对象  */</span><br><span class="line">    return obj1 === obj2;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  if(Object.keys(obj1).length !== Object.keys(obj2).length)&#123;</span><br><span class="line">      return false;</span><br><span class="line">      //数组返回下表：let arr = [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;];console.log(Object.keys(arr))-&gt;0,1,2;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  for(var attr in obj1)&#123;</span><br><span class="line">      var t1 = obj1[attr] instanceof Object;</span><br><span class="line">      var t2 = obj2[attr] instanceof Object;</span><br><span class="line">      if(t1 &amp;&amp; t2)&#123;</span><br><span class="line">          return diff(obj1[attr],obj2[attr]);</span><br><span class="line">      &#125;else if(obj1[attr] !== obj2[attr])&#123;</span><br><span class="line">          return false;</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  return true;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">实例：</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">var a = &#123;</span><br><span class="line">            name :&#123;</span><br><span class="line">                sex :&apos;men&apos;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line">        var b = &#123;</span><br><span class="line">            name :&#123;</span><br><span class="line">                sex :&apos;man&apos;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">结果：</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/08/04/判断2个对象是否相等/" data-id="cjywua3i00001gcv74zfaocj5" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JS好方法/">JS好方法</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-数组排序时效" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/08/04/数组排序时效/" class="article-date">
+  <time datetime="2019-08-04T09:34:36.000Z" itemprop="datePublished">2019-08-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/04/数组排序时效/">数组排序时效研究</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>1，for…of + Object属性<br>2，es6, new Set()<br>3, Array.sort()<br>首先使用 sort() 将数组进行排序<br>然后比较相邻元素是否相等，从而排除重复项<br>4， filter + indexOf 挺类似<br>只是把 filter() 的内部逻辑用 for 循环实现出来，再把 indexOf 换为 includes</p>
+<p>第四种方法 时效稍差，<br>5，其他方法更差</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/08/04/数组排序时效/" data-id="cjywumdk80000dsv7abu532l4" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JS好方法/">JS好方法</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-对象继承最好的方法" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/08/04/对象继承最好的方法/" class="article-date">
+  <time datetime="2019-08-04T09:34:36.000Z" itemprop="datePublished">2019-08-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/04/对象继承最好的方法/">对象继承最好的2个方法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>js 对象继承的最无毛病的两种方法 ——</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">  1，寄生组合式继承；es5版本之后，Object.creat</span><br><span class="line"> function Sub()&#123;</span><br><span class="line">        Super.call(this);</span><br><span class="line">    &#125;</span><br><span class="line">    var proto = Object.create(Super.prototype);</span><br><span class="line">    proto.constructor = Sub;</span><br><span class="line">    Sub.prototype = proto ;</span><br><span class="line">    var instance1 = new Sub(); </span><br><span class="line"></span><br><span class="line">  2，架桥函数; 空函数 function F() &#123; &#125;;  </span><br><span class="line">function inherits(Child, Parent) &#123;</span><br><span class="line">    var F = function () &#123;&#125;;</span><br><span class="line">    F.prototype = Parent.prototype;</span><br><span class="line">    Child.prototype = new F();</span><br><span class="line">    Child.prototype.constructor = Child;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p> Object.create和架桥函数的办法，和使用 new Student() 的区别在于： 使用Object.create和架桥函数的时候，只会将PrimaryStudent.prototype中的proto指向Student这个函数的原型对象Student.prototype，而使用new Student()的时候，PrimaryStudent.prototype指向的是Student这个函数对象的一个实例s，Student函数对象在实例化的时候，会完全拷贝一份Student.prototype，也会增加Student中的属性，比如name</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/08/04/对象继承最好的方法/" data-id="cjywuqrvn000204v7r5zyp7t1" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JS好方法/">JS好方法</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-对象转字符串方法" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/08/04/对象转字符串方法/" class="article-date">
+  <time datetime="2019-08-04T09:34:36.000Z" itemprop="datePublished">2019-08-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/04/对象转字符串方法/">对象转字符串方法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"> function obj2string(o) &#123;</span><br><span class="line">    var r = [];</span><br><span class="line">    if (typeof o == &quot;string&quot;) &#123;</span><br><span class="line">        return &quot;\&quot;&quot; + o.replace(/([\&apos;\&quot;\\])/g, &quot;\\$1&quot;).replace(/(\n)/g, &quot;\\n&quot;).replace(/(\r)/g, &quot;\\r&quot;).replace(/(\t)/g, &quot;\\t&quot;) + &quot;\&quot;&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">    if (typeof o == &quot;object&quot;) &#123;</span><br><span class="line">        if (!o.sort) &#123;</span><br><span class="line">            for (var i in o) &#123;</span><br><span class="line">                r.push(i + &quot;:&quot; + obj2string(o[i]));</span><br><span class="line">            &#125;</span><br><span class="line">            if ( !! document.all &amp;&amp; !/^\n?function\s*toString\(\)\s*\&#123;\n?\s*\[native code\]\n?\s*\&#125;\n?\s*$/.test(o.toString)) &#123;</span><br><span class="line">                r.push(&quot;toString:&quot; + o.toString.toString());</span><br><span class="line">            &#125;</span><br><span class="line">            r = &quot;&#123;&quot; + r.join() + &quot;&#125;&quot;;</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            for (var i = 0; i &lt; o.length; i++) &#123;</span><br><span class="line">                r.push(obj2string(o[i]))</span><br><span class="line">            &#125;</span><br><span class="line">            r = &quot;[&quot; + r.join() + &quot;]&quot;;</span><br><span class="line">        &#125;</span><br><span class="line">        return r;</span><br><span class="line">    &#125;</span><br><span class="line">    return o.toString();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/08/04/对象转字符串方法/" data-id="cjywv2jef0002zgv7crr78gtf" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JS好方法/">JS好方法</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-js深拷贝" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/08/04/js深拷贝/" class="article-date">
+  <time datetime="2019-08-04T09:34:36.000Z" itemprop="datePublished">2019-08-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/04/js深拷贝/">js深拷贝</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">function copy(arr)&#123;</span><br><span class="line">    var obj=arr.constructor==Array?[]:&#123;&#125;;</span><br><span class="line">　　//第二种方法 var obj=arr instanceof Array?[]:&#123;&#125;</span><br><span class="line">    for(var item in arr)&#123;</span><br><span class="line">        if(typeof arr[item]===&quot;object&quot;)&#123;</span><br><span class="line">            obj[item]=copy(arr[item]);</span><br><span class="line">        &#125;else&#123;</span><br><span class="line">            obj[item]=arr[item];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return obj;</span><br><span class="line">&#125;</span><br><span class="line">var obj=&#123;a:1,b:2,c:&#123;d:1,e:[3,4,5]&#125;&#125;</span><br><span class="line">var newobj=copy(obj);</span><br><span class="line">obj.c.e.push(7);</span><br><span class="line">console.log(obj);</span><br><span class="line">console.log(newobj);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/08/04/js深拷贝/" data-id="cjywv6ewr00023ov7an9n3pl2" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JS好方法/">JS好方法</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-assets和statics目录的区别" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/08/04/assets和statics目录的区别/" class="article-date">
+  <time datetime="2019-08-04T09:34:36.000Z" itemprop="datePublished">2019-08-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/04/assets和statics目录的区别/">assets和statics目录的区别</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">webpack默认将static目录的文件原原本本输出，所以当页面要使用绝对路径时，图片就需要放在static目录。如果用了相对路径，图片仍然放在static，static目录的图片被打包出来也没有多大意义，删了也不会影响图片展示。所以一般assets目录存相对路径用的图片，static存绝对路径用的图片。相对目录的图片在出包后由于被打包进js，不方便更换图片，而绝对路径的图片没有被打包进js而是在static文件夹下，所以可以随时更换。就是网上所说的，static放有可能经常被更换的图片（商品图片之类），assets放组件使用的图片（如一些menu的背景图片等）。其实主要区别在于是以原来的文件目录输出，还是打包进js里面。 </span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/08/04/assets和statics目录的区别/" data-id="cjywvf7j300028kv763huoeo8" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JS好方法/">JS好方法</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -84,8 +315,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+        <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
 
 <p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
 <h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
@@ -101,7 +331,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/04/hello-world/" data-id="cjywq11ww00004wv79oug7loi" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/04/hello-world/" data-id="cjywua3hw0000gcv7l860a2hk" class="article-share-link">Share</a>
       
       
     </footer>
@@ -121,9 +351,23 @@
 
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS好方法/">JS好方法</a></li></ul>
+    </div>
+  </div>
+
 
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/JS好方法/" style="font-size: 10px;">JS好方法</a>
+    </div>
+  </div>
+
   
     
   <div class="widget-wrap">
@@ -142,7 +386,23 @@
       <ul>
         
           <li>
-            <a href="/2019/08/04/hello-world/">Hello World</a>
+            <a href="/2019/08/04/判断2个对象是否相等/">判断2个对象是否相等</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/04/数组排序时效/">数组排序时效研究</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/04/对象继承最好的方法/">对象继承最好的2个方法</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/04/对象转字符串方法/">对象转字符串方法</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/04/js深拷贝/">js深拷贝</a>
           </li>
         
       </ul>
@@ -164,10 +424,6 @@
 </footer>
     </div>
     <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
   
 </nav>
     
