@@ -3,16 +3,18 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
-  <title>数组排序时效研究 › 学习笔记</title>
+  <title>hexo切换主题失败 › 学习笔记</title>
   <meta name="author" content="Cheney Chen">
   
-  <meta name="description" content="方法1-5，时效性递减
-1，for…of + Object属性 function unique3 (arr) {    var obj = {}, newArr = [];    for (var i = 0; i &amp;lt; arr.length; i++) {        if (!obj[ar">
+  <meta name="description" content="hexo clean1hexo clean
+
+清除缓存文件 (db.json) 和已生成的静态文件 (public)。
+在某些情况（尤其是更换主题后），如果发现您对站点的更改无论如何也不生效，您可能需要运行该命令。">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="数组排序时效研究">
+  <meta property="og:title" content="hexo切换主题失败">
   <meta property="og:site_name" content="学习笔记">
 
   
@@ -66,7 +68,7 @@
     <header>
       
   
-    <h1 class="title">数组排序时效研究</h1>
+    <h1 class="title">hexo切换主题失败</h1>
   
 
       
@@ -75,10 +77,10 @@
     </header>
     <div class="entry">
       
-        <p>方法1-5，时效性递减</p>
-<p>1，for…of + Object属性<br> function unique3 (arr) {<br>    var obj = {}, newArr = [];<br>    for (var i = 0; i &lt; arr.length; i++) {<br>        if (!obj[arr[i]]) {<br>            obj[arr[i]] = 1;<br>            newArr.push(arr[i]);<br>        }<br>    }<br>    return newArr;<br>}</p>
-<p>2，es6, new Set()<br>3, Array.sort()<br>首先使用 sort() 将数组进行排序<br>然后比较相邻元素是否相等，从而排除重复项<br>4， filter + indexOf 挺类似<br>只是把 filter() 的内部逻辑用 for 循环实现出来，再把 indexOf 换为 includes</p>
-<p>第四种方法 时效稍差，<br>5，其他方法更差</p>
+        <h3 id="hexo-clean"><a href="#hexo-clean" class="headerlink" title="hexo clean"></a>hexo clean</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br></pre></td></tr></table></figure>
+
+<p>清除缓存文件 (db.json) 和已生成的静态文件 (public)。</p>
+<p>在某些情况（尤其是更换主题后），如果发现您对站点的更改无论如何也不生效，您可能需要运行该命令。</p>
 
       
     </div>
@@ -88,7 +90,7 @@
         
   
   <div class="tags">
-    <a href="/tags/JS好方法/">JS好方法</a>
+    <a href="/tags/hexo踩坑笔记/">hexo踩坑笔记</a>
   </div>
 
         
