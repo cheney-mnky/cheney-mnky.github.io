@@ -126,36 +126,6 @@
     <header>
       
   
-    <h1 class="title"><a href="/2019/08/04/js深拷贝/">js深拷贝</a></h1>
-  
-
-      
-        <time datetime="2019-08-04T09:34:36.000Z">2019-08-04</time>
-      
-    </header>
-    <div class="entry">
-      
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">function copy(arr)&#123;</span><br><span class="line">    var obj=arr.constructor==Array?[]:&#123;&#125;;</span><br><span class="line">　　//第二种方法 var obj=arr instanceof Array?[]:&#123;&#125;</span><br><span class="line">    for(var item in arr)&#123;</span><br><span class="line">        if(typeof arr[item]===&quot;object&quot;)&#123;</span><br><span class="line">            obj[item]=copy(arr[item]);</span><br><span class="line">        &#125;else&#123;</span><br><span class="line">            obj[item]=arr[item];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return obj;</span><br><span class="line">&#125;</span><br><span class="line">var obj=&#123;a:1,b:2,c:&#123;d:1,e:[3,4,5]&#125;&#125;</span><br><span class="line">var newobj=copy(obj);</span><br><span class="line">obj.c.e.push(7);</span><br><span class="line">console.log(obj);</span><br><span class="line">console.log(newobj);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-      </footer>
-  </div>
-</article>
-
-
-
-
-
-  <article class="post">
-  <div class="post-content">
-    <header>
-      
-  
     <h1 class="title"><a href="/2019/08/04/hexo切换主题失败/">hexo切换主题失败</a></h1>
   
 
@@ -169,104 +139,6 @@
 
 <p>清除缓存文件 (db.json) 和已生成的静态文件 (public)。</p>
 <p>在某些情况（尤其是更换主题后），如果发现您对站点的更改无论如何也不生效，您可能需要运行该命令。</p>
-
-      
-    </div>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-      </footer>
-  </div>
-</article>
-
-
-
-
-
-  <article class="post">
-  <div class="post-content">
-    <header>
-      
-  
-    <h1 class="title"><a href="/2019/08/04/对象继承最好的方法/">对象继承最好的2个方法</a></h1>
-  
-
-      
-        <time datetime="2019-08-04T09:34:36.000Z">2019-08-04</time>
-      
-    </header>
-    <div class="entry">
-      
-        <p>js 对象继承的最无毛病的两种方法 ——</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">  1，寄生组合式继承；es5版本之后，Object.creat</span><br><span class="line"> function Sub()&#123;</span><br><span class="line">        Super.call(this);</span><br><span class="line">    &#125;</span><br><span class="line">    var proto = Object.create(Super.prototype);</span><br><span class="line">    proto.constructor = Sub;</span><br><span class="line">    Sub.prototype = proto ;</span><br><span class="line">    var instance1 = new Sub(); </span><br><span class="line"></span><br><span class="line">  2，架桥函数; 空函数 function F() &#123; &#125;;  </span><br><span class="line">function inherits(Child, Parent) &#123;</span><br><span class="line">    var F = function () &#123;&#125;;</span><br><span class="line">    F.prototype = Parent.prototype;</span><br><span class="line">    Child.prototype = new F();</span><br><span class="line">    Child.prototype.constructor = Child;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p> Object.create和架桥函数的办法，和使用 new Student() 的区别在于： 使用Object.create和架桥函数的时候，只会将PrimaryStudent.prototype中的proto指向Student这个函数的原型对象Student.prototype，而使用new Student()的时候，PrimaryStudent.prototype指向的是Student这个函数对象的一个实例s，Student函数对象在实例化的时候，会完全拷贝一份Student.prototype，也会增加Student中的属性，比如name</p>
-
-      
-    </div>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-      </footer>
-  </div>
-</article>
-
-
-
-
-
-  <article class="post">
-  <div class="post-content">
-    <header>
-      
-  
-    <h1 class="title"><a href="/2019/08/04/对象转字符串方法/">对象转字符串方法</a></h1>
-  
-
-      
-        <time datetime="2019-08-04T09:34:36.000Z">2019-08-04</time>
-      
-    </header>
-    <div class="entry">
-      
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"> function obj2string(o) &#123;</span><br><span class="line">    var r = [];</span><br><span class="line">    if (typeof o == &quot;string&quot;) &#123;</span><br><span class="line">        return &quot;\&quot;&quot; + o.replace(/([\&apos;\&quot;\\])/g, &quot;\\$1&quot;).replace(/(\n)/g, &quot;\\n&quot;).replace(/(\r)/g, &quot;\\r&quot;).replace(/(\t)/g, &quot;\\t&quot;) + &quot;\&quot;&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">    if (typeof o == &quot;object&quot;) &#123;</span><br><span class="line">        if (!o.sort) &#123;</span><br><span class="line">            for (var i in o) &#123;</span><br><span class="line">                r.push(i + &quot;:&quot; + obj2string(o[i]));</span><br><span class="line">            &#125;</span><br><span class="line">            if ( !! document.all &amp;&amp; !/^\n?function\s*toString\(\)\s*\&#123;\n?\s*\[native code\]\n?\s*\&#125;\n?\s*$/.test(o.toString)) &#123;</span><br><span class="line">                r.push(&quot;toString:&quot; + o.toString.toString());</span><br><span class="line">            &#125;</span><br><span class="line">            r = &quot;&#123;&quot; + r.join() + &quot;&#125;&quot;;</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            for (var i = 0; i &lt; o.length; i++) &#123;</span><br><span class="line">                r.push(obj2string(o[i]))</span><br><span class="line">            &#125;</span><br><span class="line">            r = &quot;[&quot; + r.join() + &quot;]&quot;;</span><br><span class="line">        &#125;</span><br><span class="line">        return r;</span><br><span class="line">    &#125;</span><br><span class="line">    return o.toString();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-      </footer>
-  </div>
-</article>
-
-
-
-
-
-  <article class="post">
-  <div class="post-content">
-    <header>
-      
-  
-    <h1 class="title"><a href="/2019/08/04/数组排序时效/">数组排序时效研究</a></h1>
-  
-
-      
-        <time datetime="2019-08-04T09:34:36.000Z">2019-08-04</time>
-      
-    </header>
-    <div class="entry">
-      
-        <p>方法1-5，时效性递减</p>
-<p>1，for…of + Object属性<br> function unique3 (arr) {<br>    var obj = {}, newArr = [];<br>    for (var i = 0; i &lt; arr.length; i++) {<br>        if (!obj[arr[i]]) {<br>            obj[arr[i]] = 1;<br>            newArr.push(arr[i]);<br>        }<br>    }<br>    return newArr;<br>}</p>
-<p>2，es6, new Set()<br>3, Array.sort()<br>首先使用 sort() 将数组进行排序<br>然后比较相邻元素是否相等，从而排除重复项<br>4， filter + indexOf 挺类似<br>只是把 filter() 的内部逻辑用 for 循环实现出来，再把 indexOf 换为 includes</p>
-<p>第四种方法 时效稍差，<br>5，其他方法更差</p>
 
       
     </div>
@@ -356,6 +228,134 @@
     <header>
       
   
+    <h1 class="title"><a href="/2019/08/04/js深拷贝/">js深拷贝</a></h1>
+  
+
+      
+        <time datetime="2019-08-04T09:34:36.000Z">2019-08-04</time>
+      
+    </header>
+    <div class="entry">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">function copy(arr)&#123;</span><br><span class="line">    var obj=arr.constructor==Array?[]:&#123;&#125;;</span><br><span class="line">　　//第二种方法 var obj=arr instanceof Array?[]:&#123;&#125;</span><br><span class="line">    for(var item in arr)&#123;</span><br><span class="line">        if(typeof arr[item]===&quot;object&quot;)&#123;</span><br><span class="line">            obj[item]=copy(arr[item]);</span><br><span class="line">        &#125;else&#123;</span><br><span class="line">            obj[item]=arr[item];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return obj;</span><br><span class="line">&#125;</span><br><span class="line">var obj=&#123;a:1,b:2,c:&#123;d:1,e:[3,4,5]&#125;&#125;</span><br><span class="line">var newobj=copy(obj);</span><br><span class="line">obj.c.e.push(7);</span><br><span class="line">console.log(obj);</span><br><span class="line">console.log(newobj);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+      </footer>
+  </div>
+</article>
+
+
+
+
+
+  <article class="post">
+  <div class="post-content">
+    <header>
+      
+  
+    <h1 class="title"><a href="/2019/08/04/对象转字符串方法/">对象转字符串方法</a></h1>
+  
+
+      
+        <time datetime="2019-08-04T09:34:36.000Z">2019-08-04</time>
+      
+    </header>
+    <div class="entry">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"> function obj2string(o) &#123;</span><br><span class="line">    var r = [];</span><br><span class="line">    if (typeof o == &quot;string&quot;) &#123;</span><br><span class="line">        return &quot;\&quot;&quot; + o.replace(/([\&apos;\&quot;\\])/g, &quot;\\$1&quot;).replace(/(\n)/g, &quot;\\n&quot;).replace(/(\r)/g, &quot;\\r&quot;).replace(/(\t)/g, &quot;\\t&quot;) + &quot;\&quot;&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">    if (typeof o == &quot;object&quot;) &#123;</span><br><span class="line">        if (!o.sort) &#123;</span><br><span class="line">            for (var i in o) &#123;</span><br><span class="line">                r.push(i + &quot;:&quot; + obj2string(o[i]));</span><br><span class="line">            &#125;</span><br><span class="line">            if ( !! document.all &amp;&amp; !/^\n?function\s*toString\(\)\s*\&#123;\n?\s*\[native code\]\n?\s*\&#125;\n?\s*$/.test(o.toString)) &#123;</span><br><span class="line">                r.push(&quot;toString:&quot; + o.toString.toString());</span><br><span class="line">            &#125;</span><br><span class="line">            r = &quot;&#123;&quot; + r.join() + &quot;&#125;&quot;;</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            for (var i = 0; i &lt; o.length; i++) &#123;</span><br><span class="line">                r.push(obj2string(o[i]))</span><br><span class="line">            &#125;</span><br><span class="line">            r = &quot;[&quot; + r.join() + &quot;]&quot;;</span><br><span class="line">        &#125;</span><br><span class="line">        return r;</span><br><span class="line">    &#125;</span><br><span class="line">    return o.toString();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+      </footer>
+  </div>
+</article>
+
+
+
+
+
+  <article class="post">
+  <div class="post-content">
+    <header>
+      
+  
+    <h1 class="title"><a href="/2019/08/04/对象继承最好的方法/">对象继承最好的2个方法</a></h1>
+  
+
+      
+        <time datetime="2019-08-04T09:34:36.000Z">2019-08-04</time>
+      
+    </header>
+    <div class="entry">
+      
+        <p>js 对象继承的最无毛病的两种方法 ——</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">  1，寄生组合式继承；es5版本之后，Object.creat</span><br><span class="line"> function Sub()&#123;</span><br><span class="line">        Super.call(this);</span><br><span class="line">    &#125;</span><br><span class="line">    var proto = Object.create(Super.prototype);</span><br><span class="line">    proto.constructor = Sub;</span><br><span class="line">    Sub.prototype = proto ;</span><br><span class="line">    var instance1 = new Sub(); </span><br><span class="line"></span><br><span class="line">  2，架桥函数; 空函数 function F() &#123; &#125;;  </span><br><span class="line">function inherits(Child, Parent) &#123;</span><br><span class="line">    var F = function () &#123;&#125;;</span><br><span class="line">    F.prototype = Parent.prototype;</span><br><span class="line">    Child.prototype = new F();</span><br><span class="line">    Child.prototype.constructor = Child;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p> Object.create和架桥函数的办法，和使用 new Student() 的区别在于： 使用Object.create和架桥函数的时候，只会将PrimaryStudent.prototype中的proto指向Student这个函数的原型对象Student.prototype，而使用new Student()的时候，PrimaryStudent.prototype指向的是Student这个函数对象的一个实例s，Student函数对象在实例化的时候，会完全拷贝一份Student.prototype，也会增加Student中的属性，比如name</p>
+
+      
+    </div>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+      </footer>
+  </div>
+</article>
+
+
+
+
+
+  <article class="post">
+  <div class="post-content">
+    <header>
+      
+  
+    <h1 class="title"><a href="/2019/08/04/数组排序时效/">数组排序时效研究</a></h1>
+  
+
+      
+        <time datetime="2019-08-04T09:34:36.000Z">2019-08-04</time>
+      
+    </header>
+    <div class="entry">
+      
+        <p>方法1-5，时效性递减</p>
+<p>1，for…of + Object属性<br> function unique3 (arr) {<br>    var obj = {}, newArr = [];<br>    for (var i = 0; i &lt; arr.length; i++) {<br>        if (!obj[arr[i]]) {<br>            obj[arr[i]] = 1;<br>            newArr.push(arr[i]);<br>        }<br>    }<br>    return newArr;<br>}</p>
+<p>2，es6, new Set()<br>3, Array.sort()<br>首先使用 sort() 将数组进行排序<br>然后比较相邻元素是否相等，从而排除重复项<br>4， filter + indexOf 挺类似<br>只是把 filter() 的内部逻辑用 for 循环实现出来，再把 indexOf 换为 includes</p>
+<p>第四种方法 时效稍差，<br>5，其他方法更差</p>
+
+      
+    </div>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+      </footer>
+  </div>
+</article>
+
+
+
+
+
+  <article class="post">
+  <div class="post-content">
+    <header>
+      
+  
     <h1 class="title"><a href="/2019/08/04/hello-world/">Hello World</a></h1>
   
 
@@ -421,15 +421,15 @@
       </li>
     
       <li>
-        <a href="/2019/08/04/js深拷贝/">js深拷贝</a>
-      </li>
-    
-      <li>
         <a href="/2019/08/04/hexo切换主题失败/">hexo切换主题失败</a>
       </li>
     
       <li>
-        <a href="/2019/08/04/对象继承最好的方法/">对象继承最好的2个方法</a>
+        <a href="/2019/08/04/vue面试题/">Vue面试题</a>
+      </li>
+    
+      <li>
+        <a href="/2019/08/04/js深拷贝/">js深拷贝</a>
       </li>
     
   </ul>
